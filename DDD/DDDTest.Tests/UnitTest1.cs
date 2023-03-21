@@ -1,5 +1,3 @@
-using DDD.WinForm.Common;
-
 namespace DDDTest.Tests
 {
     [TestClass]
@@ -8,9 +6,6 @@ namespace DDDTest.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var val = Class1.Add(1, 2);
-
-            Assert.AreEqual(3, val);
         }
     }
 }

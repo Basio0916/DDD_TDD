@@ -34,7 +34,7 @@
             label4 = new Label();
             DataDateLabel = new Label();
             ConditionLabel = new Label();
-            TermperatureLabel = new Label();
+            TemperatureLabel = new Label();
             AreaIdTextBox = new TextBox();
             LatestButton = new Button();
             SuspendLayout();
@@ -93,14 +93,14 @@
             ConditionLabel.TabIndex = 5;
             ConditionLabel.Text = "label6";
             // 
-            // TermperatureLabel
+            // TemperatureLabel
             // 
-            TermperatureLabel.AutoSize = true;
-            TermperatureLabel.Location = new Point(80, 128);
-            TermperatureLabel.Name = "TermperatureLabel";
-            TermperatureLabel.Size = new Size(38, 15);
-            TermperatureLabel.TabIndex = 6;
-            TermperatureLabel.Text = "label7";
+            TemperatureLabel.AutoSize = true;
+            TemperatureLabel.Location = new Point(80, 128);
+            TemperatureLabel.Name = "TemperatureLabel";
+            TemperatureLabel.Size = new Size(38, 15);
+            TemperatureLabel.TabIndex = 6;
+            TemperatureLabel.Text = "label7";
             // 
             // AreaIdTextBox
             // 
@@ -126,7 +126,7 @@
             ClientSize = new Size(284, 261);
             Controls.Add(LatestButton);
             Controls.Add(AreaIdTextBox);
-            Controls.Add(TermperatureLabel);
+            Controls.Add(TemperatureLabel);
             Controls.Add(ConditionLabel);
             Controls.Add(DataDateLabel);
             Controls.Add(label4);
@@ -147,7 +147,7 @@
         private Label label4;
         private Label DataDateLabel;
         private Label ConditionLabel;
-        private Label TermperatureLabel;
+        private Label TemperatureLabel;
         private TextBox AreaIdTextBox;
         private Button LatestButton;
     }
