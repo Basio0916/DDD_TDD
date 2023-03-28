@@ -1,26 +1,57 @@
 ﻿using DDD.Domain.Repositories;
-using DDD.WinForm.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DDD.Domain.ValueObjects;
+using DDD.Infrastructure.SQLite;
+using System.ComponentModel;
 
 namespace DDD.WinForm.ViewModels
 {
-    public class WeatherLatestViewModel
+    public class WeatherLatestViewModel : ViewModelBase
     {
         private IWeatherRepository _weather;
+
+        public WeatherLatestViewModel() : this(new WeatherSQLite())
+        {
+        }
 
         public WeatherLatestViewModel(IWeatherRepository weather)
         {
             _weather = weather;
         }
 
-        public string AreaIdText { get; set; } = "";
-        public string DataDateText { get; set; } = "";
-        public string ConditionText { get; set; } = "";
-        public string TemperatureText { get; set; } = "";
+        private string _areaIdText = string.Empty;
+        public string AreaIdText { 
+            get { return _areaIdText; }
+            set {
+                SetProperty(ref _areaIdText, value);
+            } 
+        }
+        private string _dataDateText = string.Empty;
+        public string DataDateText
+        {
+            get { return _dataDateText; }
+            set
+            {
+                SetProperty(ref _dataDateText, value);
+            }
+        }
+        private string _conditionText = string.Empty;
+        public string ConditionText
+        {
+            get { return _conditionText; }
+            set
+            {
+                SetProperty(ref _conditionText, value);
+            }
+        }
+        private string _temperatureText = string.Empty;
+        public string TemperatureText
+        {
+            get { return _temperatureText; }
+            set
+            {
+                SetProperty(ref _temperatureText, value);
+            }
+        }
 
         public void Search()
         {
@@ -28,10 +59,11 @@ namespace DDD.WinForm.ViewModels
             if (entity != null)
             {
                 DataDateText = entity.DataDate.ToString();
-                ConditionText = entity.Condition.ToString();
-                TemperatureText = CommonFunc.RoundString(entity.Temperature, CommonConst.TemperatureDecimalPoint) + " " + CommonConst.TemperatureUnitName;
+                ConditionText = entity.Condition.DisplayValue;
+                TemperatureText = entity.Temperature.DisplayValueWithUnitSpace;
 
             }
+
         }
     }
 }

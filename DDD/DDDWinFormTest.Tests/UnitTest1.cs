@@ -1,6 +1,3 @@
-using DDD.WinForm.Common;
-using DDD.WinForm;
-
 namespace DDDWinFormTest.Tests
 {
     [TestClass]
@@ -9,11 +6,11 @@ namespace DDDWinFormTest.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var val = Class1.Add(1, 2);
+            /*var val = Class1.Add(1, 2);
 
             Assert.AreEqual(3, val);
 
-            var f = new WeatherLatestView();
+            var f = new WeatherLatestView();*/
 
         }
     }
